@@ -113,3 +113,10 @@ jobs:
           ./app/build/outputs/apk/debug/app-*-debug.apk
           ./app/build/outputs/apk/debug/termux-x11-*-all.deb
           ./app/build/outputs/apk/debug/termux-x11-*-any.pkg.tar.xz
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: termux-x11-nightly 
+        path: ${{github.workspace}}/build/
+        
